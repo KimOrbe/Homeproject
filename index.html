@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mine hjemmeprojekter</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><p class="eyebrow">FRA IDÉ TIL FÆRDIGT</p><h1>Mine hjemmeprojekter</h1><p>Saml dine idéer, planlæg budgettet, og følg dine fremskridt.</p></header>
+    <section class="summary" aria-label="Overblik"><div><strong id="total">0</strong><span>projekter</span></div><div><strong id="active">0</strong><span>i gang</span></div><div><strong id="budget">0 kr.</strong><span>samlet forventet budget</span></div></section>
+    <section class="panel"><h2>Tilføj et projekt</h2>
+      <form id="project-form">
+        <label>Projektnavn<input name="name" required maxlength="100" placeholder="Fx male stuen"></label>
+        <label>Beskrivelse<textarea name="description" maxlength="1000" rows="3" placeholder="Hvad vil du gerne lave?"></textarea></label>
+        <div class="form-row"><label>Forventet budget (kr.)<input name="budget" type="number" min="0" max="100000000" step="0.01" value="0" required></label><label>Status<select name="status"><option>Idé</option><option>I gang</option><option>Færdig</option></select></label></div>
+        <button type="submit">Tilføj projekt</button>
+      </form>
+    </section>
+    <section aria-labelledby="projects-heading"><div class="list-heading"><h2 id="projects-heading">Dine projekter</h2><label>Vis<select id="filter"><option value="Alle">Alle</option><option>Idé</option><option>I gang</option><option>Færdig</option></select></label></div><div id="projects"></div></section>
+    <p id="message" role="status" aria-live="polite"></p>
+    <footer>Oplysningerne gemmes kun i denne browser. Undgår du at rydde browserdata, kan du fortsætte næste gang.</footer>
+  </main>
+</body>
+</html>
